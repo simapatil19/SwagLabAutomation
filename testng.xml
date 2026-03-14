@@ -1,0 +1,10 @@
+<suite name="SwagLabs">
+<test name ="Regression Test">
+<classes>
+<class name="tests.LoginTest"/>
+<class name="tests.HomeTest"/>
+<class name="tests.CartTest"/>
+<class name="tests.CheckOutTest"/>
+</classes>
+</test>
+</suite>
