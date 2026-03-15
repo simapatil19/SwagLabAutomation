@@ -5,8 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.WaitUtil;
+
 public class CheckOutPage {
 	private WebDriver driver;
+	private WaitUtil waitutil;
 
 	@FindBy(css = ".title")
 	private WebElement CheckoutPagetitle;
@@ -41,11 +44,12 @@ public class CheckOutPage {
 	}
 
 	public void clickButton() {
-		continueButton.click();
+		waitutil.waitForClickable(continueButton).click();
 	}
 
 	public CheckOutPage(WebDriver driver) {
 		this.driver = driver;
+		this.waitutil = new WaitUtil(driver, 10);
 		PageFactory.initElements(driver, this); // <-- critical
 	}
 

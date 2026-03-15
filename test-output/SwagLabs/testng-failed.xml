@@ -11,6 +11,14 @@
           <include name="VerifyCheckOutPageTitle"/>
         </methods>
       </class> <!-- tests.CheckOutTest -->
+      <class name="tests.CheckOutOverviewTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="VerifyNavigationBackHome"/>
+          <include name="NavigateFinishButton"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.CheckOutOverviewTest -->
     </classes>
   </test> <!-- Regression Test(failed) -->
 </suite> <!-- Failed suite [SwagLabs] -->

@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">9 methods, 2 failed,   7 passed</span>
+                    <span class="method-stats">11 methods, 3 failed,  1 skipped,  7 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,15 +103,34 @@
                     <div class="method-list-content failed suite-SwagLabs">
                       <span>
                         <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SwagLabs" title="tests.CheckOutOverviewTest" class="method navigator-link" hash-for-method="NavigateFinishButton">NavigateFinishButton</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-SwagLabs" title="tests.CheckOutTest" class="method navigator-link" hash-for-method="VerifyCheckOutDetailsSubmission">VerifyCheckOutDetailsSubmission</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SwagLabs" title="tests.CheckOutTest" class="method navigator-link" hash-for-method="VerifyCheckOutPageTitle">VerifyCheckOutPageTitle</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-SwagLabs" title="tests.CheckOutOverviewTest" class="method navigator-link" hash-for-method="VerifyNavigationBackHome">VerifyNavigationBackHome</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-SwagLabs -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-SwagLabs" class="hide-methods skipped suite-SwagLabs"> (hide)</a> <!-- hide-methods skipped suite-SwagLabs -->
+                      <a href="#" panel-name="suite-SwagLabs" class="show-methods skipped suite-SwagLabs"> (show)</a> <!-- show-methods skipped suite-SwagLabs -->
+                    </span>
+                    <div class="method-list-content skipped suite-SwagLabs">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-SwagLabs" title="tests.CheckOutTest" class="method navigator-link" hash-for-method="VerifyCheckOutPageTitle">VerifyCheckOutPageTitle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-SwagLabs -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -178,10 +197,63 @@
                   <a name="VerifyCheckOutDetailsSubmission">
                   </a> <!-- VerifyCheckOutDetailsSubmission -->
                   <span class="method-name">VerifyCheckOutDetailsSubmission</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.sendKeys(java.lang.CharSequence[])&quot; because &quot;this.addFirstName&quot; is null
-	at Pages.CheckOutPage.enterFirstName(CheckOutPage.java:35)
-	at Pages.CheckOutPage.enterDetails(CheckOutPage.java:51)
-	at tests.CheckOutTest.VerifyCheckOutDetailsSubmission(CheckOutTest.java:50)
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.cssSelector: #continue&apos; (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at utils.WaitUtil.waitForClickable(WaitUtil.java:28)
+	at Pages.CheckOutPage.clickButton(CheckOutPage.java:47)
+	at tests.CheckOutTest.VerifyCheckOutDetailsSubmission(CheckOutTest.java:52)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#continue&quot;}
+  (Session info: chrome=146.0.7680.72)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.18&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [dee1c3d4a85cf3cac51ea2da4a6d935c, findElement {value=#continue, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.72, chrome: {chromedriverVersion: 146.0.7680.80 (f08938029c88..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62114}, goog:processID: 23152, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62114/devtoo..., se:cdpVersion: 146.0.7680.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: dee1c3d4a85cf3cac51ea2da4a6d935c
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy12.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 31 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SwagLabs-class-failed -->
+          <div class="suite-SwagLabs-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">tests.CheckOutOverviewTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="NavigateFinishButton">
+                  </a> <!-- NavigateFinishButton -->
+                  <span class="method-name">NavigateFinishButton</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because &quot;this.finishButton&quot; is null
+	at Pages.checkoutOverviewPage.ClickonFinish(checkoutOverviewPage.java:22)
+	at tests.CheckOutOverviewTest.NavigateFinishButton(CheckOutOverviewTest.java:40)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 27 stack frames
 </div> <!-- stack-trace -->
@@ -189,19 +261,87 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="VerifyCheckOutPageTitle">
-                  </a> <!-- VerifyCheckOutPageTitle -->
-                  <span class="method-name">VerifyCheckOutPageTitle</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.getText()&quot; because &quot;this.CheckoutPagetitle&quot; is null
-	at Pages.CheckOutPage.CheckTitle(CheckOutPage.java:31)
-	at tests.CheckOutTest.VerifyCheckOutPageTitle(CheckOutTest.java:30)
+                  <a name="VerifyNavigationBackHome">
+                  </a> <!-- VerifyNavigationBackHome -->
+                  <span class="method-name">VerifyNavigationBackHome</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.cssSelector: #continue&apos; (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at utils.WaitUtil.waitForClickable(WaitUtil.java:28)
+	at Pages.CheckOutPage.clickButton(CheckOutPage.java:47)
+	at tests.CheckOutOverviewTest.VerifyNavigationBackHome(CheckOutOverviewTest.java:67)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#continue&quot;}
+  (Session info: chrome=146.0.7680.72)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.18&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3e2c942668f51501f9342830b8e0f2ea, findElement {value=#continue, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.72, chrome: {chromedriverVersion: 146.0.7680.80 (f08938029c88..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53545}, goog:processID: 16024, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53545/devtoo..., se:cdpVersion: 146.0.7680.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3e2c942668f51501f9342830b8e0f2ea
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy12.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 31 more
+... Removed 31 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-SwagLabs-class-failed -->
+          <div class="suite-SwagLabs-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.CheckOutTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyCheckOutPageTitle">
+                  </a> <!-- VerifyCheckOutPageTitle -->
+                  <span class="method-name">VerifyCheckOutPageTitle</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_RESET
+  (Session info: chrome=146.0.7680.72)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.18&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a55d472e1170770f686d38e2129807c9, get {url=https://www.saucedemo.com/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.72, chrome: {chromedriverVersion: 146.0.7680.80 (f08938029c88..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59198}, goog:processID: 15988, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59198/devtoo..., se:cdpVersion: 146.0.7680.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a55d472e1170770f686d38e2129807c9
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:300)
+	at POMTestNG.POMTestNG.BaseTest.setUp(BaseTest.java:34)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SwagLabs-class-skipped -->
           <div class="suite-SwagLabs-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -291,6 +431,7 @@
       &lt;class name=&quot;tests.HomeTest&quot;/&gt;
       &lt;class name=&quot;tests.CartTest&quot;/&gt;
       &lt;class name=&quot;tests.CheckOutTest&quot;/&gt;
+      &lt;class name=&quot;tests.CheckOutOverviewTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Regression Test --&gt;
 &lt;/suite&gt; &lt;!-- SwagLabs --&gt;
@@ -304,7 +445,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Regression Test (4 classes)</span>
+                <span class="test-name">Regression Test (5 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -330,48 +471,56 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(9);
+data.addRows(11);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'VerifyCheckOutPageTitle')
-data.setCell(0, 2, 'tests.CheckOutTest')
-data.setCell(0, 3, 1654);
+data.setCell(0, 1, 'VerifyNavigationBackHome')
+data.setCell(0, 2, 'tests.CheckOutOverviewTest')
+data.setCell(0, 3, 12197);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'VerifyItemInCart')
-data.setCell(1, 2, 'tests.CartTest')
-data.setCell(1, 3, 1497);
+data.setCell(1, 1, 'VerifyCheckOutDetailsSubmission')
+data.setCell(1, 2, 'tests.CheckOutTest')
+data.setCell(1, 3, 12020);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'VerifyCheckButtonNavigation')
-data.setCell(2, 2, 'tests.CartTest')
-data.setCell(2, 3, 1426);
+data.setCell(2, 1, 'NavigateFinishButton')
+data.setCell(2, 2, 'tests.CheckOutOverviewTest')
+data.setCell(2, 3, 2071);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'VerifyCheckOutDetailsSubmission')
-data.setCell(3, 2, 'tests.CheckOutTest')
-data.setCell(3, 3, 1369);
+data.setCell(3, 1, 'VerifyItemInCart')
+data.setCell(3, 2, 'tests.CartTest')
+data.setCell(3, 3, 1287);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'verifyaddBagPackCart')
-data.setCell(4, 2, 'tests.HomeTest')
-data.setCell(4, 3, 1132);
+data.setCell(4, 1, 'VerifyCheckButtonNavigation')
+data.setCell(4, 2, 'tests.CartTest')
+data.setCell(4, 3, 1128);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'VerifyOpenCartNavigation')
+data.setCell(5, 1, 'verifyaddBagPackCart')
 data.setCell(5, 2, 'tests.HomeTest')
-data.setCell(5, 3, 1055);
+data.setCell(5, 3, 804);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'VerifyinvalidLogin')
+data.setCell(6, 1, 'verifyValidLogin')
 data.setCell(6, 2, 'tests.LoginTest')
-data.setCell(6, 3, 1040);
+data.setCell(6, 3, 736);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'verifyValidLogin')
-data.setCell(7, 2, 'tests.LoginTest')
-data.setCell(7, 3, 936);
+data.setCell(7, 1, 'VerifyOpenCartNavigation')
+data.setCell(7, 2, 'tests.HomeTest')
+data.setCell(7, 3, 732);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'VerifyHomePageTitleAfterLoggin')
-data.setCell(8, 2, 'tests.HomeTest')
-data.setCell(8, 3, 864);
+data.setCell(8, 1, 'VerifyinvalidLogin')
+data.setCell(8, 2, 'tests.LoginTest')
+data.setCell(8, 3, 716);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'VerifyHomePageTitleAfterLoggin')
+data.setCell(9, 2, 'tests.HomeTest')
+data.setCell(9, 3, 657);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'VerifyCheckOutPageTitle')
+data.setCell(10, 2, 'tests.CheckOutTest')
+data.setCell(10, 3, 0);
 window.suiteTableData['SwagLabs']= { tableData: data, tableDiv: 'times-div-SwagLabs'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 32 seconds</span>
               <div id="times-div-SwagLabs">
               </div> <!-- times-div-SwagLabs -->
             </div> <!-- times-div -->
@@ -404,120 +553,147 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyinvalidLogin</span>
-                <span class="method-start">8326 ms</span>
+                <span class="method-start">5209 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">9378 ms</span>
+                <span class="method-start">5927 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">10163 ms</span>
+                <span class="method-start">6437 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyValidLogin</span>
-                <span class="method-start">14921 ms</span>
+                <span class="method-start">10860 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">15861 ms</span>
+                <span class="method-start">11596 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.HomeTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">16408 ms</span>
+                <span class="method-start">11929 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyHomePageTitleAfterLoggin</span>
-                <span class="method-start">23282 ms</span>
+                <span class="method-start">16066 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">24146 ms</span>
+                <span class="method-start">16725 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">24671 ms</span>
+                <span class="method-start">17070 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyOpenCartNavigation</span>
-                <span class="method-start">30037 ms</span>
+                <span class="method-start">21556 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">31099 ms</span>
+                <span class="method-start">22294 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">31627 ms</span>
+                <span class="method-start">22619 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyaddBagPackCart</span>
-                <span class="method-start">36586 ms</span>
+                <span class="method-start">27153 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">37718 ms</span>
+                <span class="method-start">27957 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.CartTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">38245 ms</span>
+                <span class="method-start">28337 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyCheckButtonNavigation</span>
-                <span class="method-start">43140 ms</span>
+                <span class="method-start">32248 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">44576 ms</span>
+                <span class="method-start">33385 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">45120 ms</span>
+                <span class="method-start">33822 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyItemInCart</span>
-                <span class="method-start">51215 ms</span>
+                <span class="method-start">43630 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">52714 ms</span>
+                <span class="method-start">44925 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.CheckOutTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">53314 ms</span>
+                <span class="method-start">45307 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">VerifyCheckOutDetailsSubmission</span>
-                <span class="method-start">58617 ms</span>
+                <span class="method-start">50881 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">60001 ms</span>
+                <span class="method-start">62915 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">setUp</span>
-                <span class="method-start">60580 ms</span>
+                <span class="method-start">63293 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">67180 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.CheckOutOverviewTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">67189 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">VerifyCheckOutPageTitle</span>
-                <span class="method-start">68728 ms</span>
+                <span class="method-name">NavigateFinishButton</span>
+                <span class="method-start">72115 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">70384 ms</span>
+                <span class="method-start">74186 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">74745 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">VerifyNavigationBackHome</span>
+                <span class="method-start">80190 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">92403 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
